@@ -33,7 +33,7 @@ namespace FatigueCalc
 
         public void OnUnload()
         {
-            PluginCode.ClearText();
+            PluginCode.Unload();
         }
 
         public void OnUpdate()

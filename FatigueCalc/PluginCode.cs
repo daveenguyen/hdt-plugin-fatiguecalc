@@ -35,7 +35,6 @@ namespace FatigueCalc
             _player = null;
             _calc = new FatigueCalc();
             _textBox = new PluginTextbox();
-            ClearText();
 
             GameEvents.OnGameEnd.Add(ClearText);
             GameEvents.OnInMenu.Add(ClearText);
@@ -54,6 +53,11 @@ namespace FatigueCalc
                 _player = PlayerEntity.GetTag(GAME_TAG.CONTROLLER);
 
             ClearText();
+        }
+
+        public static void Unload()
+        {
+            _textBox.Unload();
         }
 
         public static void ClearText() {
